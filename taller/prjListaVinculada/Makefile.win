@@ -1,0 +1,58 @@
+# Project: prjListaVinculada
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = busqueda.o capturas.o repaldo.o ediciones.o impresiones.o menus.o ordenamiento.o cantidad.o eliminaciones.o lectura.o main.o
+LINKOBJ  = busqueda.o capturas.o repaldo.o ediciones.o impresiones.o menus.o ordenamiento.o cantidad.o eliminaciones.o lectura.o main.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -lgdi32 -lcomctl32 -lcomdlg32 -pg
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = prjListaVinculada.exe
+CXXFLAGS = $(CXXINCS) -pg
+CFLAGS   = $(INCS) -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+busqueda.o: busqueda.c
+	$(CC) -c busqueda.c -o busqueda.o $(CFLAGS)
+
+capturas.o: capturas.c
+	$(CC) -c capturas.c -o capturas.o $(CFLAGS)
+
+repaldo.o: repaldo.c
+	$(CC) -c repaldo.c -o repaldo.o $(CFLAGS)
+
+ediciones.o: ediciones.c
+	$(CC) -c ediciones.c -o ediciones.o $(CFLAGS)
+
+impresiones.o: impresiones.c
+	$(CC) -c impresiones.c -o impresiones.o $(CFLAGS)
+
+menus.o: menus.c
+	$(CC) -c menus.c -o menus.o $(CFLAGS)
+
+ordenamiento.o: ordenamiento.c
+	$(CC) -c ordenamiento.c -o ordenamiento.o $(CFLAGS)
+
+cantidad.o: cantidad.c
+	$(CC) -c cantidad.c -o cantidad.o $(CFLAGS)
+
+eliminaciones.o: eliminaciones.c
+	$(CC) -c eliminaciones.c -o eliminaciones.o $(CFLAGS)
+
+lectura.o: lectura.c
+	$(CC) -c lectura.c -o lectura.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)

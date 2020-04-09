@@ -1,0 +1,14 @@
+Lo primero que hicimos fue ir a ver cómo se hace el método Montante a mano para comprobar que todo estuviera en orden en el programa.
+
+Primero pensamos que el problema se encontraba en la pestaña "procMontante.c" en las líneas 43-47, las pusimos como comentario, pero al comprobar el programa nos dimos cuenta que el primer pivote seguía sin ser dividido.
+
+Luego creíamos que se debía a algún cambio en las variables parámetro "Mr" o "Mt" y tratamos de cambiarlas en algunas líneas, pero esos cambios solo generaban más errores. 
+
+Finalmente observamos que aunque antes del proceso 'while' se inicializaba la variable del pivote anterior a 1, en el resto del código no se actualizaba su valor. Fue cuando nos dimos cuenta del error, y modificamos la línea 40 al agregarle la actualización de que el pivote anterior adquiriera el valor el pivote actual, pues en la siguiente línea se aumentaba la iteración y después terminaba el 'while', y al inicio del 'while' se actualizaba el pivote actual.
+
+Comprobamos el cambio y el sistema de ecuaciones de la abuelita quedó resuelto.
+
+procMontante.c
+	línea 40:
+	
+	Pant = Pact; 

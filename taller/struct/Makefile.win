@@ -1,0 +1,49 @@
+# Project: Proyecto2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o capturas.o menus.o impresiones.o ediciones.o busqueda.o creacion_txt.o ordenamiento.o
+LINKOBJ  = main.o capturas.o menus.o impresiones.o ediciones.o busqueda.o creacion_txt.o ordenamiento.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -pg
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = estructura_alumnos.exe
+CXXFLAGS = $(CXXINCS) -pg
+CFLAGS   = $(INCS) -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+capturas.o: capturas.c
+	$(CC) -c capturas.c -o capturas.o $(CFLAGS)
+
+menus.o: menus.c
+	$(CC) -c menus.c -o menus.o $(CFLAGS)
+
+impresiones.o: impresiones.c
+	$(CC) -c impresiones.c -o impresiones.o $(CFLAGS)
+
+ediciones.o: ediciones.c
+	$(CC) -c ediciones.c -o ediciones.o $(CFLAGS)
+
+busqueda.o: busqueda.c
+	$(CC) -c busqueda.c -o busqueda.o $(CFLAGS)
+
+creacion_txt.o: creacion_txt.c
+	$(CC) -c creacion_txt.c -o creacion_txt.o $(CFLAGS)
+
+ordenamiento.o: ordenamiento.c
+	$(CC) -c ordenamiento.c -o ordenamiento.o $(CFLAGS)
